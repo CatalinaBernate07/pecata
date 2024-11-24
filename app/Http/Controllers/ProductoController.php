@@ -62,8 +62,10 @@ class ProductoController extends Controller
     public function edit($id): View
     {
         $producto = Producto::find($id);
+        $categorias = Categoria::all(); // Obtener todas las categorías
 
-        return view('producto.edit', compact('producto'));
+
+        return view('producto.edit', compact('producto', 'categorias'));
     }
 
     /**
